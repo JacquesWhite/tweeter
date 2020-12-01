@@ -1,0 +1,159 @@
+.no-resize {
+   resize: none;
+}
+
+.containerTweetFormBtn {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.tweet-form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 60px;
+  background-color: #4272d7;
+
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  transition: all 0.4s;
+}
+.tweet-form-btn:hover {
+  background-color: #333333;
+}
+
+/*------------------------------------------------------------------
+[ textarea ]*/
+
+.wraptextarea {
+  width: 100%;
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #e6e6e6;
+  margin-bottom: 30px;
+}
+
+.textarea {
+   display: block;
+   width: 100%;
+   background: transparent;
+   font-size: 15px;
+   color: #666666;
+   line-height: 1.5;
+   outline: none;
+   height: 200px;
+   padding: 25px;
+}
+
+.focus-textarea-1, 
+.focus-textarea-2 {
+   display: block;
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   pointer-events: none;
+}
+.focus-textarea-1::before,
+.focus-textarea-2::before {
+   content: "";
+   display: block;
+   position: absolute;
+   width: 0;
+   height: 1px;
+   background-color: #4272d7;
+}
+.focus-textarea-1::before {
+   top: -1px;
+   left: 0;
+}
+.focus-textarea-2::before {
+   bottom: -1px;
+   right: 0;
+}
+.focus-textarea-1::after,
+.focus-textarea-2::after {
+   content: "";
+   display: block;
+   position: absolute;
+   width: 1px;
+   height: 0;
+   background-color: #4272d7;
+}
+.focus-textarea-1::after {
+   top: 0;
+   right: -1px;
+}
+.focus-textarea-2::after {
+   bottom: 0;
+   left: -1px;
+}
+.textarea:focus + .focus-textarea-1::before {
+   animation: full-w 0.2s linear 0s;
+   animation-fill-mode: both;
+}
+.textarea:focus + .focus-textarea-1::after {
+   animation: full-h 0.1s linear 0.2s;
+   animation-fill-mode: both;
+}
+.textarea:focus + .focus-textarea-1 + .focus-textarea-2::before {
+   animation: full-w 0.2s linear 0.3s;
+   animation-fill-mode: both;
+}
+.textarea:focus + .focus-textarea-1 + .focus-textarea-2::after {
+   animation: full-h 0.1s linear 0.5s;
+   animation-fill-mode: both;
+}
+@keyframes full-w {
+   to {
+      width: calc(100% + 1px);
+   }
+}
+@keyframes full-h {
+   to {
+      height: calc(100% + 1px);
+   }
+}
+
+aside {
+    background-color: white;
+    position: fixed;
+    right: 100px;
+    top: 0;
+    z-index: 9999;
+    transition: 0.1s;
+}
+
+aside > input {
+    display: inline;
+    height: 30px;
+    margin:10px;
+}
+
+aside > i {
+    font-size: 48px;
+    position: relative;
+    top: 10px;
+}
+
+.material-icons.md-30 { font-size: 30px; font-weight: bold;}
+
+aside > hr {
+    margin: 0;
+    padding: 0;
+}
+
+.user {
+    padding: 10px;
+    display: none;
+}
+
+.user > a {
+    text-decoration: none;
+}

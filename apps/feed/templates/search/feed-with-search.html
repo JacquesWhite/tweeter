@@ -1,0 +1,42 @@
+{% extends 'feed.html' %}
+{% block create %}
+{% load widget_tweaks %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href={% static '/css/add_tweet_style.css' %}>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+<script src="{% static 'js/search.js' %}"></script>
+
+<div class="mx-auto container p-3 shadow mb-5 bg-white text-center">
+    <form class="" method="POST" action=".">
+        {% csrf_token %}
+        <div class="wraptextarea">
+            {% render_field form.content class="no-resize textarea" placeholder="Write a tweet..."%}
+            <span class="focus-textarea-1"></span>
+            <span class="focus-textarea-2"></span>
+        </div>
+
+        <div class="containerTweetFormBtn m-t-20">
+            <button class="tweet-form-btn" type="submit">
+                Tweet!
+            </button>
+        </div>
+    </form>
+</div>
+{% endblock %}
+
+{% block search %}
+<aside>
+    <i class="material-icons md-30">search</i>
+    <input id="user-input" type="text" placeholder="Search User">
+
+    {% for user in users %}
+        <hr>
+        <div class="user" id="{{ user.id }}">
+        <a>{{ user }}</a>
+        </div>
+    {% endfor %}
+</aside>
+
+{% endblock %}

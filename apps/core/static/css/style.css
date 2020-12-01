@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Oswald:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fanwood+Text&display=swap');
+
+
+html {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.navbar {
+    height: 50px;
+}
+
+.vertical-center {
+    min-height: calc(100vh - 50px);
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Oswald', sans-serif;
+}
+
+#logoDesc {
+    font-family: 'Fanwood Text', serif;
+}

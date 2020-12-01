@@ -1,0 +1,219 @@
+a {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #666666;
+    margin: 0;
+    transition: all 0.4s;
+}
+
+a:focus {
+    outline: none !important;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+input {
+    outline: none;
+    border: none;
+}
+
+textarea {
+    outline: none;
+    border: none;
+}
+
+textarea:focus, input:focus {
+    border-color: transparent !important;
+}
+
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+iframe {
+    border: none !important;
+}
+
+.txt1 {
+    font-size: 15px;
+    line-height: 1.4;
+    color: #999999;
+}
+
+.txt2 {
+    text-decoration: none;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #4272d7;
+}
+
+.hov1:hover {
+    text-decoration: underline;
+}
+
+.loginBox {
+    width: 500px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loginForm {
+    width: 100%;
+}
+
+.loginFormTitle {
+    display: block;
+    font-size: 30px;
+    color: #555555;
+    line-height: 3;
+    text-align: center;
+}
+
+.wrapInput {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #e6e6e6;
+}
+
+.wrapInput.rs1 {
+    border-top: none;
+}
+
+.wrapInput.rs2 {
+    border-top: none;
+    margin-bottom: 30px;
+}
+
+.input {
+    display: block;
+    width: 100%;
+    background: transparent;
+    font-size: 15px;
+    color: #666666;
+    line-height: 5;
+}
+
+input.input {
+    height: 68px;
+    padding: 0 25px 0 25px;
+}
+
+.focus-input-1,
+.focus-input-2 {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.focus-input-1::before,
+.focus-input-2::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: #4272d7;
+}
+
+.focus-input-1::before {
+    top: -1px;
+    left: 0;
+}
+
+.focus-input-2::before {
+    bottom: -1px;
+    right: 0;
+}
+
+.focus-input-1::after,
+.focus-input-2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 0;
+    background-color: #4272d7;
+}
+
+.focus-input-1::after {
+    top: 0;
+    right: -1px;
+}
+
+.focus-input-2::after {
+    bottom: 0;
+    left: -1px;
+}
+
+.input:focus + .focus-input-1::before {
+    animation: full-w 0.2s linear 0s;
+    animation-fill-mode: both;
+}
+
+.input:focus + .focus-input-1::after {
+    animation: full-h 0.1s linear 0.2s;
+    animation-fill-mode: both;
+}
+
+.input:focus + .focus-input-1 + .focus-input-2::before {
+    animation: full-w 0.2s linear 0.3s;
+    animation-fill-mode: both;
+}
+
+.input:focus + .focus-input-1 + .focus-input-2::after {
+    animation: full-h 0.1s linear 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes full-w {
+    to {
+        width: calc(100% + 1px);
+    }
+}
+
+@keyframes full-h {
+    to {
+        height: calc(100% + 1px);
+    }
+}
+
+.containerLoginFormBtn {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.login-form-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    width: 100%;
+    height: 60px;
+    background-color: #4272d7;
+
+    font-size: 14px;
+    color: #fff;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    transition: all 0.4s;
+}
+
+.login-form-btn:hover {
+    background-color: #333333;
+}

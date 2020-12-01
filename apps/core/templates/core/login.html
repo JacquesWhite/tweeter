@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load widget_tweaks %}
+
+{% block  content %}
+
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href={% static '/css/login.css' %}>
+
+    <div class="vertical-center">
+        <div class="loginBox mx-auto container p-3 shadow mb-5 bg-white text-center">
+            <form class="loginForm" method="post" action=".">
+                {% csrf_token %}
+                <span class="logo loginFormTitle p-b-33">
+                Log In
+            </span>
+                {% for error in form.non_field_errors %}
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
+                {% endfor %}
+
+                <div class="wrapInput">
+                    {% render_field form.username class="input" placeholder="username" %}
+                    <span class="focus-input-1"></span>
+                    <span class="focus-input-2"></span>
+                </div>
+                {% for error in form.password1.errors %}
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
+                {% endfor %}
+
+                <div class="wrapInput rs2">
+                    {% render_field form.password class="input" placeholder="password" %}
+                    <span class="focus-input-1"></span>
+                    <span class="focus-input-2"></span>
+                </div>
+                {% for error in form.password.errors %}
+                    <div class="alert alert-danger" role="alert">{{ error }}</div>
+                {% endfor %}
+
+                <div class="containerLoginFormBtn m-t-20">
+                    <button class="login-form-btn" type="submit">
+                        Log In
+                    </button>
+                </div>
+                <div class="text-center">
+                <span class="txt1">
+                    Don't have an account?
+                </span>
+                    <a href="{% url 'signup' %}" class="txt2 hov1">
+                        Sign Up
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}

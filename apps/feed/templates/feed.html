@@ -1,0 +1,21 @@
+{%  extends 'core/base.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href={% static '/css/add_tweet_style.css' %}>
+{% block content %}
+
+    {% block create %}
+    {% endblock %}
+
+    {% block search %}
+    {% endblock %}
+
+    <div class="">
+        {% for tweet in tweets %}
+		    <div class="mx-auto container p-3 shadow mb-5 bg-white">
+            <p>Written by {{ tweet.author }} at {{ tweet.add_date }}</p>
+                <hr>
+                <p class="content">{{ tweet.content }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
